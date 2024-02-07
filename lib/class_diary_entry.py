@@ -13,15 +13,19 @@ class DiaryEntry:
         #   "My Title: These are the contents"
 
     def count_words(self):
-        #return self.words.count()?
+        words = self.contents.split()
+        word_count = len(words)
+        return word_count
+        #wants to count individual words in string, separated by ' '. returns the count.
         # Returns:
         #   int: the number of words in the diary entry
         pass
 
     def reading_time(self, wpm):
+        word_count = self.count_words()
+        time_to_read = int(word_count / wpm)
+        return time_to_read
         
-        
-        #maybe needs the timedelta thing here to estimate reading time - find the code we did before on this!
         # Parameters:
         #   wpm: an integer representing the number of words the user can read 
         #        per minute
